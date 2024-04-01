@@ -1,0 +1,16 @@
+package com.yoonje.authenticationexample.repository;
+
+import com.yoonje.authenticationexample.common.MemberType;
+import com.yoonje.authenticationexample.entity.Member;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+@Repository
+public interface MemberRepository extends JpaRepository<Member, UUID> {
+    Optional<Member> findByAccount(String account);
+    List<Member> findAllByType(MemberType type);
+}
