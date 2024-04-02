@@ -17,8 +17,8 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 public class Member {
-    @Column(nullable = false, scale = 20, unique = true)
-    private String account;
+    @Column(nullable = false, scale = 30, unique = true)
+    private String email;
     @Column(nullable = false)
     private String password;
     private String name;
@@ -33,7 +33,7 @@ public class Member {
 
     public static Member from(SignUpRequest request, PasswordEncoder encoder) {
         return Member.builder()
-                .account(request.account())
+                .email(request.email())
                 .password(encoder.encode(request.password()))
                 .name(request.name())
                 .age(request.age())
@@ -42,8 +42,8 @@ public class Member {
     }
 
     @Builder
-    private Member(String account, String password, String name, Integer age, MemberType type) {
-        this.account = account;
+    private Member(String email, String password, String name, Integer age, MemberType type) {
+        this.email = email;
         this.password = password;
         this.name = name;
         this.age = age;

@@ -17,7 +17,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 public class SecurityConfig {
-    private static final String[] ALLOWED_URIS = {"/", "/swagger-ui/**", "/v3/**", "/sign-up", "/sign-in", "/error"};
+    private static final String[] ALLOWED_URIS = {"/", "/swagger-ui/**", "/v3/**", "/api/members/sign-up", "/api/members/sign-in", "/error"};
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
@@ -35,7 +35,7 @@ public class SecurityConfig {
 
     @Bean
     public UserDetailsManager userDetailsService() {
-        UserDetails userDetails = //핵심 정보로 사용자의 인증 정보를 생성
+        UserDetails userDetails = // 핵심 정보로 사용자의 인증 정보를 생성
                 User.withDefaultPasswordEncoder()    // 패스워드를 암호화
                         .username("kevin@gmail.com") // usrname(id) 설정
                         .password("1111")            // password 설정
