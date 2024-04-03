@@ -40,7 +40,7 @@ public class GeneralSignService {
 
 
     public Member findMemberByEmail(SignInRequest request){
-        return memberRepository.findMemberByEmail(request.email())
+        return memberRepository.findByEmail(request.email())
                 .filter(login -> encoder.matches(request.password(), login.getPassword()))
                 .orElseThrow(MemberNotFoundException::new);
     }

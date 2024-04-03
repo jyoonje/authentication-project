@@ -5,6 +5,7 @@ import com.yoonje.authenticationexample.member.dto.sign_in.request.SignInRequest
 import com.yoonje.authenticationexample.member.dto.sign_in.response.SignInResponse;
 import com.yoonje.authenticationexample.member.dto.sign_up.request.SignUpRequest;
 import com.yoonje.authenticationexample.member.service.GeneralSignService;
+import com.yoonje.authenticationexample.member.service.SignService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -16,18 +17,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import static com.yoonje.authenticationexample.member.controller.SignController.MEMBER_API_URI;
 import static com.yoonje.authenticationexample.common.HttpStatusResponseEntity.*;
+import static com.yoonje.authenticationexample.member.controller.SignController.SIGN_API_URI;
 
 
 @Tag(name = "회원 가입 및 로그인")
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(MEMBER_API_URI)
+@RequestMapping(SIGN_API_URI)
 public class SignController {
-    public static final String MEMBER_API_URI = "/api/members";
+    public static final String SIGN_API_URI = "/api/sign";
 
-    private final GeneralSignService signService;
+    private final SignService signService;
 
     @Operation(summary = "회원 가입")
     @PostMapping("/sign-up")
