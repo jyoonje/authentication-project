@@ -24,6 +24,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Component
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
+    // HTTP 요청이 들어올 때마다 서블릿 컨테이너에 의해 자동으로 호출되는 클래스
     private final TokenProvider tokenProvider;
 
     // 밑의 두 메소드를 이용해 스프링 시큐리티에서 사용할 UsernamePasswordAuthenticationToken 객체를 생성한다.
@@ -44,7 +45,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         return Optional.ofNullable(request.getHeader(HttpHeaders.AUTHORIZATION))
                 .filter(token -> token.length() > 7 && token.substring(0, 7).equalsIgnoreCase("Bearer "))
                 .map(token -> token.split(" ")[1].trim())
-//                .map(token -> token.substring(7))
                 .orElse(null);
     }
 

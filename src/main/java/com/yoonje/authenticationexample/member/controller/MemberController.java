@@ -1,5 +1,6 @@
 package com.yoonje.authenticationexample.member.controller;
 
+import com.yoonje.authenticationexample.member.dto.member.response.MemberDeleteResponse;
 import com.yoonje.authenticationexample.member.dto.member.response.MemberProfileResponse;
 import com.yoonje.authenticationexample.member.entity.Member;
 import com.yoonje.authenticationexample.member.service.GeneralMemberService;
@@ -32,16 +33,12 @@ public class MemberController {
     @Operation(summary = "내 정보 조회")
     @GetMapping(value = "/{me}")
     public ResponseEntity<MemberProfileResponse> memberProfile(@AuthenticationPrincipal User user){
-        System.out.println("UUID  value username: " + UUID.fromString(user.getUsername()));
-        return ResponseEntity.ok(memberService.memberProfile(UUID.fromString(user.getUsername())));
+        return ResponseEntity.ok(memberService.memberProfile(user));
     }
 
-//    @Operation(summary = "내 정보 조회")
-//    @GetMapping(value = "/{me}")
-//    public ResponseEntity<MemberProfileResponse> memberProfile(Authentication authentication){
-//        System.out.println("username: " + authentication.getName());
-//        System.out.println("UUID value: " + UUID.fromString(authentication.getName()));
-//        System.out.println("Authorities(): " + authentication.getAuthorities());
-//        return ResponseEntity.ok(memberService.memberProfile(UUID.fromString(authentication.getName())));
-//    }
+    @Operation(summary = "회원 탈퇴")
+    @DeleteMapping()
+    public ResponseEntity<MemberDeleteResponse> memberDelete(@AuthenticationPrincipal User user){
+        return ResponseEntity.ok(memberService.memberDelete(user));
+    }
 }
