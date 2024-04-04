@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class GeneralSignService {
+public class GeneralSignService implements SignService{
     private final MemberRepository memberRepository;
     private final PasswordEncoder encoder;
     private final TokenProvider tokenProvider;
@@ -33,7 +33,6 @@ public class GeneralSignService {
     @Transactional(readOnly = true)
     public SignInResponse signIn(SignInRequest request){
         Member member = findMemberByEmail(request);
-
         String token = tokenProvider.createToken(String.format("%s:%s", member.getId(), member.getType()));
         return new SignInResponse(member.getName(), member.getType(), token);
     }

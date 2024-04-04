@@ -10,13 +10,19 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 import static com.yoonje.authenticationexample.member.controller.MemberController.MEMBER_API_URI;
 
-@Tag(name = "로그인 시 이용가능한 기능")
+@Tag(name = "로그인 시 이용가능한 API")
 @RestController
 @RequiredArgsConstructor
+@PreAuthorize("hasAuthority('USER')")   // 해당 어노테이션으로인해 AccessDeniedException 발생
 @RequestMapping(MEMBER_API_URI)
 public class MemberController {
     public static final String MEMBER_API_URI = "/api/members";
@@ -24,9 +30,18 @@ public class MemberController {
     private final MemberService memberService;
 
     @Operation(summary = "내 정보 조회")
-    @PreAuthorize("hasAuthority('USER')")
     @GetMapping(value = "/{me}")
-    public ResponseEntity<MemberProfileResponse> memberProfile(@RequestHeader("Authorization") String token){
-        return ResponseEntity.ok(memberService.memberProfile(token));
+    public ResponseEntity<MemberProfileResponse> memberProfile(@AuthenticationPrincipal User user){
+        System.out.println("UUID  value username: " + UUID.fromString(user.getUsername()));
+        return ResponseEntity.ok(memberService.memberProfile(UUID.fromString(user.getUsername())));
     }
+
+//    @Operation(summary = "내 정보 조회")
+//    @GetMapping(value = "/{me}")
+//    public ResponseEntity<MemberProfileResponse> memberProfile(Authentication authentication){
+//        System.out.println("username: " + authentication.getName());
+//        System.out.println("UUID value: " + UUID.fromString(authentication.getName()));
+//        System.out.println("Authorities(): " + authentication.getAuthorities());
+//        return ResponseEntity.ok(memberService.memberProfile(UUID.fromString(authentication.getName())));
+//    }
 }

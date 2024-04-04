@@ -9,6 +9,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import java.util.UUID;
 import java.time.LocalDateTime;
@@ -19,14 +20,23 @@ import java.time.LocalDateTime;
 public class Member {
     @Column(nullable = false, scale = 30, unique = true)
     private String email;
+
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private Integer age;
+
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private MemberType type;
+
     @CreationTimestamp
     private LocalDateTime createdAt;
+
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
@@ -56,6 +66,5 @@ public class Member {
         this.name = newMember.name();
         this.age = newMember.age();
     }
-
 
 }

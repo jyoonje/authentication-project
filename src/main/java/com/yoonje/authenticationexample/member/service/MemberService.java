@@ -4,7 +4,8 @@ import com.yoonje.authenticationexample.member.dto.member.response.MemberProfile
 import com.yoonje.authenticationexample.member.entity.Member;
 
 import java.util.Optional;
+import java.util.UUID;
 
 public interface MemberService {
-    MemberProfileResponse memberProfile(String memberId);
+    MemberProfileResponse memberProfile(UUID id);
 }

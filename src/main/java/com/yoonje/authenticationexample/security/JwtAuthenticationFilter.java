@@ -42,8 +42,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     // HTTP 요청의 헤더에서 Authrozation 값을 찾아서 Bearer로 시작하는지 확인. 그 후 접두어를 제외한 토큰값으로 파싱
     private String parseBearerToken(HttpServletRequest request) {
         return Optional.ofNullable(request.getHeader(HttpHeaders.AUTHORIZATION))
-                .filter(token -> token.substring(0, 7).equalsIgnoreCase("Bearer "))
-                .map(token -> token.substring(7))
+                .filter(token -> token.length() > 7 && token.substring(0, 7).equalsIgnoreCase("Bearer "))
+                .map(token -> token.split(" ")[1].trim())
+//                .map(token -> token.substring(7))
                 .orElse(null);
     }
 

@@ -18,8 +18,8 @@ import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-@Configuration // 메소드 시큐리티 활성화
-@EnableMethodSecurity
+@Configuration
+@EnableMethodSecurity // 메소드 시큐리티 활성화
 @RequiredArgsConstructor
 public class SecurityConfig {
     private static final String[] ALLOWED_URIS = {"/", "/swagger-ui/**", "/v3/**", "/api/members/sign-up", "/api/members/sign-in", "/error"};
