@@ -31,7 +31,7 @@ public class MemberController {
     private final MemberService memberService;
 
     @Operation(summary = "내 정보 조회")
-    @GetMapping(value = "/{me}")
+    @GetMapping("/me")
     public ResponseEntity<MemberProfileResponse> memberProfile(@AuthenticationPrincipal User user){
         return ResponseEntity.ok(memberService.memberProfile(user));
     }

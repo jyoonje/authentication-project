@@ -23,7 +23,6 @@ public class ExceptionAdvice {
     @ExceptionHandler(MissingRequestHeaderException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<HttpStatus> MissingRequestHeaderException(Exception e) {
-        e.printStackTrace();
         return RESPONSE_BAD_REQUEST;
     }
 }

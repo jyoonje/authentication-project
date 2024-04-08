@@ -34,6 +34,7 @@ public class GeneralSignService implements SignService{
     public SignInResponse signIn(SignInRequest request){
         Member member = findMemberByEmail(request);
         String token = tokenProvider.createToken(String.format("%s:%s", member.getId(), member.getType()));
+        System.out.println(member.getType().getClass());
         return new SignInResponse(member.getName(), member.getType(), token);
     }
 

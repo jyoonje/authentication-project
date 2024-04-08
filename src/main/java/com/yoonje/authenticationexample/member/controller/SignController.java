@@ -1,10 +1,8 @@
 package com.yoonje.authenticationexample.member.controller;
 
-import com.yoonje.authenticationexample.member.dto.ApiResponse;
 import com.yoonje.authenticationexample.member.dto.sign_in.request.SignInRequest;
 import com.yoonje.authenticationexample.member.dto.sign_in.response.SignInResponse;
 import com.yoonje.authenticationexample.member.dto.sign_up.request.SignUpRequest;
-import com.yoonje.authenticationexample.member.service.GeneralSignService;
 import com.yoonje.authenticationexample.member.service.SignService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
