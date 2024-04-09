@@ -43,6 +43,7 @@ public class TokenProvider {
         this.issuer = issuer;
     }
 
+    // 토큰 생성 메소드 (회원의 UUID인 ID와 타입을 Subject로 설정.)
     public String createToken(String userSpecification) {
         return Jwts.builder()
                 .signWith(new SecretKeySpec(secretKey.getBytes(), SignatureAlgorithm.HS512.getJcaName()))
@@ -53,6 +54,7 @@ public class TokenProvider {
                 .compact();
     }
 
+    // Subject를 복호화하여 문자열로 반환
     public String validateTokenAndGetSubject(String token) {
         return Jwts.parserBuilder()
                 .setSigningKey(secretKey.getBytes())

@@ -10,6 +10,7 @@ import org.springframework.web.servlet.HandlerExceptionResolver;
 
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint {
+    // 인증 실패 시 처리를 담당하는 클래스
     private final HandlerExceptionResolver resolver;
 
     public JwtAuthenticationEntryPoint(@Qualifier("handlerExceptionResolver") HandlerExceptionResolver resolver) {
