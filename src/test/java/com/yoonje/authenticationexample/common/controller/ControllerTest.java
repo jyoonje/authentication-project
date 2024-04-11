@@ -2,7 +2,7 @@ package com.yoonje.authenticationexample.common.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yoonje.authenticationexample.admin.service.AdminService;
-import com.yoonje.authenticationexample.member.controller.AdminControllerTest;
+import com.yoonje.authenticationexample.admin.controller.AdminControllerTest;
 import com.yoonje.authenticationexample.member.controller.MemberController;
 import com.yoonje.authenticationexample.member.controller.SignController;
 import com.yoonje.authenticationexample.member.repository.MemberRepository;
