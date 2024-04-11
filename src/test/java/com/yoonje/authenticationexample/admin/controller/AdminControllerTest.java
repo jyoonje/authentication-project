@@ -1,4 +1,4 @@
-package com.yoonje.authenticationexample.member.controller;
+package com.yoonje.authenticationexample.admin.controller;
 
 import com.yoonje.authenticationexample.admin.service.AdminService;
 import com.yoonje.authenticationexample.common.controller.ControllerTest;
