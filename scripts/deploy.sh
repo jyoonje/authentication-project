@@ -8,7 +8,7 @@ sudo docker rmi nobuts/tomcat-server:latest
 sudo docker pull nobuts/tomcat-server:latest
 
 # 도커 run
-docker run -d -p 80:8080 --env-file=env_list.txt --name app nobuts/tomcat-server:latest
+docker run -d -p 80:8080 --name app nobuts/tomcat-server:latest
 
 # 사용하지 않는 불필요한 이미지 삭제 -> 현재 컨테이너가 물고 있는 이미지는 삭제되지 않습니다.
 docker rmi -f $(docker images -f "dangling=true" -q) || true
