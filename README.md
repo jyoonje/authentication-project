@@ -11,9 +11,14 @@
 본 프로젝트는 원본 프로젝트를 기반으로 하여 개인적인 학습 목적으로만 사용되며, 상업적 목적으로 사용되지 않습니다.
 
 
+
+
 ## 프로젝트 전체 구성도
 
-![프로젝트 전체 구성도](https://github.com/jyoonje/authentication-project/assets/150825231/1a8f3836-2722-4531-b74c-4c4b3996a58a)
+[시스템 아키텍처.drawio (3).pdf](https://github.com/jyoonje/authentication-project/files/14995592/drawio.3.pdf)
+
+
+
 
 ## 사용한 기술 스택
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1713257915734?alt=media&token=eef4ad9b-0159-4ec8-9ce5-63940eab44f4)](https://github.com/msdio/stackticon)
