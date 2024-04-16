@@ -16,4 +16,5 @@
 ![프로젝트 전체 구성도](https://github.com/jyoonje/authentication-project/assets/150825231/1a8f3836-2722-4531-b74c-4c4b3996a58a)
 
 ## 사용한 기술 스택
-[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1713257588692?alt=media&token=9842c458-5761-4bc7-a949-b07b8b891066)](https://github.com/msdio/stackticon)
+[![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1713257915734?alt=media&token=eef4ad9b-0159-4ec8-9ce5-63940eab44f4)](https://github.com/msdio/stackticon)
+
