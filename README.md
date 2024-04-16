@@ -14,8 +14,7 @@
 
 
 ## 프로젝트 전체 구성도
-
-![프로젝트 전체 구성도](https://github.com/jyoonje/authentication-project/files/14995592/drawio.3.pdf)
+![시스템 아키텍처.drawio (3).pdf](https://github.com/jyoonje/authentication-project/files/14995635/drawio.3.pdf)
 
 
 
