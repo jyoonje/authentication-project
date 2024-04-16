@@ -4,7 +4,7 @@
 
 <br/><br/>
 
-----
+
 
 ## :earth_asia: 단순한 기능 구현을 넘어서,
 - 유지보수를 용이하게 하는 객체지향적 설계에 집중했습니다.
@@ -13,14 +13,14 @@
 
 <br/><br/>
 
-----
+
 
 ## 프로젝트 전체 구성도
 ![시스템 아키텍처 drawio (2)](https://github.com/jyoonje/authentication-project/assets/150825231/e0a08229-133c-4352-b08e-2ff5bf3c0437)
 
 
 <br/><br/>
-----
+
 
 ## 사용한 기술 스택
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1713257915734?alt=media&token=eef4ad9b-0159-4ec8-9ce5-63940eab44f4)](https://github.com/msdio/stackticon)
