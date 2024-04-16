@@ -32,4 +32,4 @@
 
 - **참고 깃허브 링크**: [GitHub](https://github.com/Colabear754/authentication_example_java)
 
-본 프로젝트는 개인적인 학습 목적으로만 사용되며, 상업적 목적으로 사용되지 않습니다.
+본 프로젝트는 개인적인 학습 목적으로 사용되며, 상업적 목적으로 사용되지 않습니다.
