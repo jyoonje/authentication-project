@@ -1,9 +1,16 @@
 # authentication-project
 
-Spring Security와 JWT를 활용한 사용자 인증 및 인가 기능, 그리고 Jenkins와 Docker를 통해 구축된 CI/CD 파이프라인을 갖춘 웹 애플리케이션입니다.
+**Spring Security와 JWT를 활용한 사용자 인증 및 인가 기능, 그리고 Jenkins와 Docker를 통해 구축된 CI/CD 파이프라인을 갖춘 웹 애플리케이션입니다.**
 
 
 ----
+
+
+## :earth_asia: 단순한 기능 구현을 넘어서,
+- 유지보수를 용이하게 하는 객체지향적 설계에 집중했습니다.
+- REST API의 체계적인 구현에 주력하였습니다.
+- 가독성이 좋은 코드를 작성하고자 노력하였습니다. 
+
 
 
 ## 프로젝트 전체 구성도
