@@ -26,10 +26,4 @@
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1713257915734?alt=media&token=eef4ad9b-0159-4ec8-9ce5-63940eab44f4)](https://github.com/msdio/stackticon)
 
 <br/><br/>
-----
 
-## 참고 프로젝트 출처
-
-- **참고 깃허브 링크**: [GitHub](https://github.com/Colabear754/authentication_example_java)
-
-본 프로젝트는 개인적인 학습 목적으로 사용되며, 상업적 목적으로 사용되지 않습니다.
