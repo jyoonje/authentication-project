@@ -25,8 +25,14 @@ public class AdminController {
     private final AdminService adminService;
 
     @Operation(summary = "모든 회원 조회")
-    @GetMapping("/admin")
+    @GetMapping("/members")
     public ResponseEntity<List<MemberInfoResponse>> allMembers(){
         return ResponseEntity.ok(adminService.getMembers());
+    }
+
+    @Operation(summary = "모든 관리자 조회")
+    @GetMapping("/admins")
+    public ResponseEntity<List<MemberInfoResponse>> allAdmins(){
+        return ResponseEntity.ok(adminService.getAdmins());
     }
 }

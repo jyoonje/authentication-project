@@ -19,4 +19,13 @@ public class GeneralAdminService implements AdminService{
                 .map(MemberInfoResponse::from)
                 .toList();
     }
+
+    @Override
+    public List<MemberInfoResponse> getAdmins() {
+        return memberRepository.findAllByType(MemberType.ADMIN)
+                .stream()
+                .map(MemberInfoResponse::from)
+                .toList();
+
+    }
 }

@@ -11,7 +11,7 @@ public record MemberInfoResponse(
         @Schema(description = "회원 고유키", example = "c0a80121-7aeb-4b4b-8b0a-6b1c032f0e4a")
         UUID id,
         @Schema(description = "회원 이메일", example = "nobuts98@gmail.com")
-        String emal,
+        String email,
         @Schema(description = "회원 이름", example = "윤제")
         String name,
         @Schema(description = "회원 나이", example = "27")

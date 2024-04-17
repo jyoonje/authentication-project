@@ -1,7 +1,9 @@
 package com.yoonje.authenticationexample.member.controller;
 
+import com.yoonje.authenticationexample.member.dto.member.request.MemberUpdateRequest;
 import com.yoonje.authenticationexample.member.dto.member.response.MemberDeleteResponse;
 import com.yoonje.authenticationexample.member.dto.member.response.MemberProfileResponse;
+import com.yoonje.authenticationexample.member.dto.member.response.MemberUpdateResponse;
 import com.yoonje.authenticationexample.member.entity.Member;
 import com.yoonje.authenticationexample.member.service.GeneralMemberService;
 import com.yoonje.authenticationexample.member.service.MemberService;
@@ -9,6 +11,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.UUID;
 
+import static com.yoonje.authenticationexample.common.HttpStatusResponseEntity.RESPONSE_OK;
 import static com.yoonje.authenticationexample.member.controller.MemberController.MEMBER_API_URI;
 
 @Tag(name = "로그인 시 이용가능한 API")
@@ -31,7 +35,7 @@ public class MemberController {
     private final MemberService memberService;
 
     @Operation(summary = "내 정보 조회")
-    @GetMapping("/me")
+    @GetMapping()
     public ResponseEntity<MemberProfileResponse> memberProfile(@AuthenticationPrincipal User user){
         return ResponseEntity.ok(memberService.memberProfile(user));
     }
@@ -40,5 +44,11 @@ public class MemberController {
     @DeleteMapping()
     public ResponseEntity<MemberDeleteResponse> memberDelete(@AuthenticationPrincipal User user){
         return ResponseEntity.ok(memberService.memberDelete(user));
+    }
+
+    @Operation(summary = "회원 정보 수정")
+    @PutMapping()
+    public ResponseEntity<MemberUpdateResponse> logout(@AuthenticationPrincipal User user, @RequestBody MemberUpdateRequest request){
+        return ResponseEntity.ok(memberService.memberUpdate(user, request));
     }
 }

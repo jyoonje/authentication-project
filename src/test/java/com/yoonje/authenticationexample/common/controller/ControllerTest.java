@@ -1,6 +1,7 @@
 package com.yoonje.authenticationexample.common.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.yoonje.authenticationexample.admin.controller.AdminController;
 import com.yoonje.authenticationexample.admin.service.AdminService;
 import com.yoonje.authenticationexample.admin.controller.AdminControllerTest;
 import com.yoonje.authenticationexample.member.controller.MemberController;
@@ -21,7 +22,7 @@ import static org.springframework.security.test.web.servlet.request.SecurityMock
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest({ MemberController.class, SignController.class, AdminControllerTest.class})
+@WebMvcTest({ MemberController.class, SignController.class, AdminController.class})
 // Web Layer에 속한 항목들: Security, Filter, Interceptor, request/response Handling, Controller
 public class ControllerTest {
     @Autowired
